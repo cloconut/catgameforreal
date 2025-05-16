@@ -4,7 +4,7 @@ pygame.init()
 pygame.mixer.init()
 
 screen = pygame.display.set_mode((1280, 720))
-bg = pygame.image.load('imagez/kittiemainbg.png') # default background
+bg = pygame.image.load('imagez/background/kittiemainbg.png') # default background
 
 class Button(): # baraltech YT tutorial :)
     def __init__(self, image, pos, textinput, font, colour, hovcolour):
@@ -36,11 +36,8 @@ class Button(): # baraltech YT tutorial :)
         else:
             self.text = self.font.render(self.textinput, True, self.colour)
 
-def getfont(size):
-    return pygame.font.Font('bleugh/textfont.ttf', size)
-
-def play()
-    
+def getfont(size): # resizes font
+    return pygame.font.Font('files/textfont.ttf', size) # apple font ttf file
 
 def menu():  # menu screen
     pygame.display.set_caption('KITTIE: MENU')  # sets caption
@@ -53,11 +50,11 @@ def menu():  # menu screen
         screen.blit(bg, (0, 0))  # sets background
         menu_mouse_pos = pygame.mouse.get_pos()
 
-        playbutton = Button(image=pygame.image.load('imagez/playbutton.png'), pos=(885, 350),
+        playbutton = Button(image=pygame.image.load('imagez/buttons/playbutton.png'), pos=(885, 350),
                             textinput='play', font=getfont(75), colour='#91cbf2', hovcolour='#57bbff')
-        optionbutton = Button(image=pygame.image.load('imagez/optionbutton.png'), pos=(885, 500),
+        optionbutton = Button(image=pygame.image.load('imagez/buttons/optionbutton.png'), pos=(885, 500),
                               textinput='options', font=getfont(75), colour='#91cbf2', hovcolour='#57bbff')
-        quitbutton = Button(image=pygame.image.load('imagez/playbutton.png'), pos=(885, 650),
+        quitbutton = Button(image=pygame.image.load('imagez/buttons/playbutton.png'), pos=(885, 650),
                             textinput='quit', font=getfont(75), colour='#91cbf2', hovcolour='#57bbff')
 
         for button in [playbutton, optionbutton, quitbutton]:
