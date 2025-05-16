@@ -1,5 +1,6 @@
 import pygame, sys
 from buttonfunc import Button
+from kittieclass import Kittie
 
 pygame.init()
 pygame.mixer.init()
