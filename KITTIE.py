@@ -21,19 +21,26 @@ def start():
     # pygame.mixer.music.load() (to play music)
     # pygame.mixer.music.play(-1)  # loops music
 
-    while True: # game loop
-        screen.blit(bg, (0, 0))  # sets background
-        menu_mouse_pos = pygame.mouse.get_pos()
+    while True: # Game loop
+        screen.blit(bg, (0, 0))  # Sets background
+        menu_mouse_pos = pygame.mouse.get_pos() # Mouse position
 
+    # Button Properties
+
+        # Feed button 1. Image, 2. Position (x, y), 3. Text, 4. Font, 5. Colour, 6. Hover colour
         feedbutton = Button(image=pygame.image.load('imagez/buttons/optionbutton.png'), pos=(210, 650),
                             textinput='feed', font=getfont(75), colour='#91cbf2', hovcolour='#57bbff')
+        # Sleep button 1. Image, 2. Position (x, y), 3. Text, 4. Font, 5. Colour, 6. Hover colour
         sleepbutton = Button(image=pygame.image.load('imagez/buttons/optionbutton.png'), pos=(640, 650),
                               textinput='sleep', font=getfont(75), colour='#91cbf2', hovcolour='#57bbff')
+        # Play button 1. Image, 2. Position (x, y), 3. Text, 4. Font, 5. Colour, 6. Hover colour
         playbutton = Button(image=pygame.image.load('imagez/buttons/optionbutton.png'), pos=(1070, 650),
                             textinput='play', font=getfont(75), colour='#91cbf2', hovcolour='#57bbff')
+        # Exit button 1. Image, 2. Position (x, y), 3. Text, 4. Font, 5. Colour, 6. Hover colour
         exitbutton = Button(image=pygame.image.load('imagez/buttons/optionbutton.png'), pos=(1070, 130),
                             textinput='exit', font=getfont(75), colour='#91cbf2', hovcolour='#57bbff')
 
+        # Change colour of buttons on hover
         for button in [playbutton, feedbutton, sleepbutton, exitbutton]:
             button.changecolour(menu_mouse_pos)
             button.update(screen)
@@ -70,19 +77,23 @@ def main():
     pygame.mixer.music.load('mus/kittietheme.mp3')
     pygame.mixer.music.play(-1)  # -1 loops forever
 
-    while True: # game loop
+    while True: # Game loop
         screen.blit(bg, (0, 0))  # sets background
         menu_mouse_pos = pygame.mouse.get_pos()
 
-    # button properties
+    # Button Properties
+
+        # Start button 1. Image, 2. Position (x, y), 3. Text, 4. Font, 5. Colour, 6. Hover colour
         startbutton = Button(image=pygame.image.load('imagez/buttons/startbutton.png'), pos=(885, 350),
                             textinput='start', font=getfont(75), colour='#91cbf2', hovcolour='#57bbff')
+        # Options button 1. Image, 2. Position (x, y), 3. Text, 4. Font, 5. Colour, 6. Hover colour
         optionbutton = Button(image=pygame.image.load('imagez/buttons/optionbutton.png'), pos=(885, 500),
                               textinput='options', font=getfont(75), colour='#91cbf2', hovcolour='#57bbff')
+        # Quit button 1. Image, 2. Position (x, y), 3. Text, 4. Font, 5. Colour, 6. Hover colour
         quitbutton = Button(image=pygame.image.load('imagez/buttons/quitbutton.png'), pos=(885, 650),
                             textinput='quit', font=getfont(75), colour='#91cbf2', hovcolour='#57bbff')
 
-    # change colour of button on hover
+    # Change colour of buttons on hover
         for button in [startbutton, optionbutton, quitbutton]:
             button.changecolour(menu_mouse_pos)
             button.update(screen)
