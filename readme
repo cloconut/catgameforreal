@@ -1,0 +1,30 @@
+
+First ever python GUI lets gooooo!!
+
+    I used quite a few tutorials / youtube videos / websties listed in this readme further down :)
+    I'm pretty new to coding too, so I'm sure I'll be so happy with how this turns out.
+
+All the graphics, sprites, music and fonts were made by hand by me from my school issued laptop.
+ (sorry if they are shabby)
+ These are the applications I used:
+ - MS paint online (creating backgrounds / blocky images)
+ - Adobe photoshop (mostly for resizing my png images)
+ - Piskel (for my sprites)
+ - BeepBox (for creating sfx / soundtracks)
+
+ All of these I used for free, they are easily accessible and work really well !!
+ 
+I also coded this using the pygame library !
+Here's a link to their website, where you can also find their github:
+    https://www.pygame.org/news
+
+here's the information on all my helpful tutorials :):)
+    (big shoutout to these guys)
+
+ - Baraltech (YouTube) 
+ This guy does extremely helpful video tutorials on how to use pygame's library
+ Also props to him for the button and font tutorial, used one of his videos for the main menu screen as well.
+ - tutorialspoint.com
+ This website was super duper helpful, anything you can use in the pygame library this website will teach you how to use. I specifically used it for the tutorial on importing and playing mp3s, so my game could have a cute lil soundtrack / sfx.
+ 
+
