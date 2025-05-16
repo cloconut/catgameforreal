@@ -39,8 +39,50 @@ class Button(): # baraltech YT tutorial :)
 def getfont(size): # resizes font
     return pygame.font.Font('files/textfont.ttf', size) # apple font ttf file
 
+def play(): # game
+    pygame.display.set_caption('KITTIE: MENU')  # sets menu caption
+
+    # Load and play music ONCE
+    # pygame.mixer.music.load() (to play music)
+    # pygame.mixer.music.play(-1)  # loops music
+
+    while True: # game loop
+        screen.blit(bg, (0, 0))  # sets background
+        menu_mouse_pos = pygame.mouse.get_pos()
+
+        playbutton = Button(image=pygame.image.load('imagez/buttons/optionbutton.png'), pos=(210, 650),
+                            textinput='feed', font=getfont(75), colour='#91cbf2', hovcolour='#57bbff')
+        optionbutton = Button(image=pygame.image.load('imagez/buttons/optionbutton.png'), pos=(640, 650),
+                              textinput='sleep', font=getfont(75), colour='#91cbf2', hovcolour='#57bbff')
+        quitbutton = Button(image=pygame.image.load('imagez/buttons/optionbutton.png'), pos=(1070, 650),
+                            textinput='play', font=getfont(75), colour='#91cbf2', hovcolour='#57bbff')
+
+        for button in [playbutton, optionbutton, quitbutton]:
+            button.changecolour(menu_mouse_pos)
+            button.update(screen)
+
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.mixer.music.stop()
+                pygame.quit()
+                sys.exit()
+
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                if playbutton.checkforinput(menu_mouse_pos):
+                    pygame.mixer.music.stop()
+                    play()
+                if optionbutton.checkforinput(menu_mouse_pos):
+                    options()
+                if quitbutton.checkforinput(menu_mouse_pos):
+                    pygame.mixer.music.stop()
+                    pygame.quit()
+                    sys.exit()
+
+        pygame.display.update()
+
+
 def menu():  # menu screen
-    pygame.display.set_caption('KITTIE: MENU')  # sets caption
+    pygame.display.set_caption('KITTIE: MENU')  # sets menu caption
 
     # Load and play music ONCE
     pygame.mixer.music.load('mus/kittietheme.mp3')
@@ -50,11 +92,11 @@ def menu():  # menu screen
         screen.blit(bg, (0, 0))  # sets background
         menu_mouse_pos = pygame.mouse.get_pos()
 
-        playbutton = Button(image=pygame.image.load('imagez/buttons/playbutton.png'), pos=(885, 350),
+        playbutton = Button(image=pygame.image.load('imagez/buttons/optionbutton.png'), pos=(885, 350),
                             textinput='play', font=getfont(75), colour='#91cbf2', hovcolour='#57bbff')
         optionbutton = Button(image=pygame.image.load('imagez/buttons/optionbutton.png'), pos=(885, 500),
                               textinput='options', font=getfont(75), colour='#91cbf2', hovcolour='#57bbff')
-        quitbutton = Button(image=pygame.image.load('imagez/buttons/playbutton.png'), pos=(885, 650),
+        quitbutton = Button(image=pygame.image.load('imagez/buttons/optionbutton.png'), pos=(885, 650),
                             textinput='quit', font=getfont(75), colour='#91cbf2', hovcolour='#57bbff')
 
         for button in [playbutton, optionbutton, quitbutton]:
